@@ -3,6 +3,7 @@ import Image from "next/image";
 import Form from 'next/form'
 import { useState} from "react";
 import FetchByProductId from "./components/fetchbyproductid";
+import FetchByCategory from "./components/fetchbycategory";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       </p>
       <div className="mt-8">
         <FetchByProductId />
+      </div>
+      <div className="mt-8">
+        <FetchByCategory />
       </div>
     </div>
   );

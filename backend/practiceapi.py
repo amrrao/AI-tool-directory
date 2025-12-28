@@ -33,20 +33,20 @@ def read_root():
     return AITools.values()
 
 @app.get("/fetchbyproductid/{product_id}")
-def read_student(product_id: int = Path(..., gt=0)):
+def read_tool(product_id: int = Path(..., gt=0)):
     return AITools[product_id]
 
 @app.get("/fetchbycategory/")
-def get_students(major: str | None=None):
+def get_tool(category: str | None=None):
     returning = []
     for student in AITools.values():
-        if student["major"]==major:
+        if student["category"]==category:
             returning.append(student)
     return returning
 
 
 @app.post("/tools")
-def create_student(student: Tool):
+def create_tool(student: Tool):
     product_id = max(AITools.keys()) + 1
     AITools[product_id] = student.dict()
     return {"message": "tool created successfully"}
