@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/amrutharao/Desktop/everything/webdev/practicingbackend/practicingfrontend/frontend/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\nimport Form from 'next/form'\n\n\nexport default function Home() {\n  return (\n    <div className=\"bg-white text-black h-screen text-center p-8\">\n      <h1 className=\"text-2xl\">\n        This is the student registry app.\n      </h1>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAIe,SAAS;IACtB,qBACE,wUAAC;QAAI,WAAU;kBACb,cAAA,wUAAC;YAAG,WAAU;sBAAW;;;;;;;;;;;AAK/B"}}]
+}
