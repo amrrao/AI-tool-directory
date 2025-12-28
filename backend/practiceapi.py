@@ -13,53 +13,55 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-students = {
-    1: {"name": "Alice", "age": 20, "major": "Computer Science"},
+AITools = {
+    1: {"name": "Veo3", "price": 20, "category": "video generation"},
+    2: {"name": "ChatGPT", "price": 30, "category": "text generation"},
+    3: {"name": "Midjourney", "price": 25, "category": "image generation"},
 }
 
-class Student(BaseModel):
+class Tool(BaseModel):
     name: str
-    age: int
-    major: str
-class UpdateStudent(BaseModel):
+    price: int
+    category: str
+class UpdateTool(BaseModel):
     name: str | None=None
-    age: int | None=None
-    major: str | None=None
+    price: int | None=None
+    category: str | None=None
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return AITools.values()
 
-@app.get("/students/{student_id}")
-def read_student(student_id: int = Path(..., gt=0)):
-    return students[student_id]
+@app.get("/fetchbyproductid/{product_id}")
+def read_student(product_id: int = Path(..., gt=0)):
+    return AITools[product_id]
 
-@app.get("/students/")
+@app.get("/fetchbycategory/")
 def get_students(major: str | None=None):
     returning = []
-    for student in students.values():
+    for student in AITools.values():
         if student["major"]==major:
             returning.append(student)
     return returning
 
 
-@app.post("/students")
-def create_student(student: Student):
-    student_id = max(students.keys()) + 1
-    students[student_id] = student.dict()
-    return {"message": "student created successfully"}
+@app.post("/tools")
+def create_student(student: Tool):
+    product_id = max(AITools.keys()) + 1
+    AITools[product_id] = student.dict()
+    return {"message": "tool created successfully"}
 
-@app.put("/students/{student_id}")
-def update_student(student_id: int, student: UpdateStudent):
-    if student_id not in students:
-        return {"error": "Student does not exist"}
-    if student.name!=None:
-        students[student_id]["name"] = student.name
-    if student.age!=None:
-        students[student_id]["age"] = student.age
-    if student.major!=None:
-        students[student_id]["major"] = student.major
-    return {"message": "student updated successfully"}
+@app.put("/tools/{product_id}")
+def update_student(product_id: int, tool: UpdateTool):
+    if product_id not in AITools:
+        return {"error": "tool does not exist"}
+    if tool.name!=None:
+        AITools[product_id]["name"] = tool.name
+    if tool.price!=None:
+        AITools[product_id]["price"] = tool.price
+    if tool.category!=None:
+        AITools[product_id]["category"] = tool.category
+    return {"message": "tool updated successfully"}
 
 
     
