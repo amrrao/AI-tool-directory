@@ -40,12 +40,7 @@ class UpdateTool(BaseModel):
 
 @app.get("/")
 def read_root():
-    response = (
-        supabase.table("planets")
-        .select("*")
-        .execute()
-        )
-    return response.data
+    return {"message": "Welcome to the AI Tools API"}
 
 @app.get("/fetchbyproductid/{product_id}")
 def read_tool(product_id: int = Path(..., gt=0)):
