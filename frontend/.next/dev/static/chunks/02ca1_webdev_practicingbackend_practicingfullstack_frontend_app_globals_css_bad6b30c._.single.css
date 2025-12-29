@@ -12,7 +12,6 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
-    --container-2xl: 42rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --radius-md: .375rem;
@@ -290,24 +289,8 @@
     height: 100vh;
   }
 
-  .w-20 {
-    width: calc(var(--spacing) * 20);
-  }
-
-  .w-80 {
-    width: calc(var(--spacing) * 80);
-  }
-
   .w-100 {
     width: calc(var(--spacing) * 100);
-  }
-
-  .max-w-2xl {
-    max-width: var(--container-2xl);
-  }
-
-  .justify-center {
-    justify-content: center;
   }
 
   .rounded-md {

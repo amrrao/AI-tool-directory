@@ -4,6 +4,8 @@ import Form from 'next/form'
 import { useState} from "react";
 import FetchByProductId from "./components/fetchbyproductid";
 import FetchByCategory from "./components/fetchbycategory";
+import CreateTool from "./components/createtool";
+import UpdateTool from "./components/updatetool";
 
 export default function Home() {
   return (
@@ -19,6 +21,12 @@ export default function Home() {
       </div>
       <div className="mt-8">
         <FetchByCategory />
+      </div>
+      <div className="mt-8">
+        <CreateTool />
+      </div>
+      <div className="mt-8">
+        <UpdateTool />
       </div>
     </div>
   );

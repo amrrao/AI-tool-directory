@@ -46,9 +46,9 @@ def get_tool(category: str | None=None):
 
 
 @app.post("/tools")
-def create_tool(student: Tool):
+def create_tool(tool: Tool):
     product_id = max(AITools.keys()) + 1
-    AITools[product_id] = student.dict()
+    AITools[product_id] = tool.dict()
     return {"message": "tool created successfully"}
 
 @app.put("/tools/{product_id}")

@@ -1,52 +1,17 @@
-[00:00:00.789] Server  LOG     ✓ Ready in 623ms
-[00:00:01.615] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:54.690] Server  LOG     ✓ Compiled in 482ms
-[00:11:13.527] Server  LOG     ✓ Compiled in 23ms
-[00:30:21.493] Server  LOG     ✓ Compiled in 259ms
-[00:30:31.299] Server  LOG     ✓ Compiled in 27ms
-[00:37:40.325] Server  LOG     ✓ Compiled in 173ms
-[00:37:49.392] Server  LOG     ✓ Compiled in 13ms
-[00:43:31.055] Server  LOG     ✓ Compiled in 242ms
-[00:43:39.752] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:43:41.536] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {name, price, category}). If you meant to render a collection of children, use an array instead.
-[00:43:45.767] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:43:47.728] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {name, price, category}). If you meant to render a collection of children, use an array instead.
-[00:49:39.607] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:49:39.609] Server  LOG     ✓ Compiled in 193ms
-[00:49:40.690] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:49:50.715] Server  LOG     ✓ Compiled in 28ms
-[00:49:50.903] Browser ERROR   `value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components. input
-[00:51:45.767] Server  LOG     ✓ Compiled in 932ms
-[00:51:53.281] Server  LOG     ✓ Compiled in 27ms
-[00:51:59.946] Server  LOG     ✓ Compiled in 27ms
-[00:52:51.277] Server  LOG     ✓ Compiled in 32ms
-[00:54:49.780] Server  LOG     ✓ Compiled in 164ms
-[00:55:05.684] Server  LOG     ✓ Compiled in 25ms
-[00:55:11.337] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:55:24.323] Server  LOG     ✓ Compiled in 11ms
-[00:55:47.310] Server  LOG     ✓ Compiled in 16ms
-[00:55:53.953] Server  LOG     ✓ Compiled in 11ms
-[00:56:31.362] Server  LOG     ✓ Compiled in 34ms
-[00:56:46.356] Server  LOG     ✓ Compiled in 32ms
-[00:57:37.842] Server  LOG     ✓ Compiled in 21ms
-[00:57:59.539] Server  LOG     ✓ Compiled in 35ms
-[00:58:05.577] Server  LOG     ✓ Compiled in 23ms
-[00:58:13.667] Server  LOG     ✓ Compiled in 17ms
-[00:58:41.964] Server  LOG     ✓ Compiled in 19ms
-[00:58:50.199] Server  LOG     ✓ Compiled in 38ms
-[00:59:00.439] Server  LOG     ✓ Compiled in 33ms
-[00:59:05.400] Server  LOG     ✓ Compiled in 10ms
-[00:59:16.011] Server  LOG     ✓ Compiled in 22ms
-[00:59:22.927] Server  LOG     ✓ Compiled in 12ms
-[01:01:35.757] Server  LOG     ✓ Compiled in 120ms
-[01:01:43.587] Server  LOG     ✓ Compiled in 107ms
-[01:02:03.367] Server  LOG     ✓ Compiled in 26ms
-[01:02:12.535] Server  LOG     ✓ Compiled in 10ms
-[01:08:28.352] Server  LOG     ✓ Compiled in 152ms
-[01:14:35.791] Server  LOG     ✓ Compiled in 184ms
-[02:16:25.245] Server  LOG     ✓ Compiled in 148ms
-[02:16:31.774] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:17:04.578] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:17:27.681] Server  LOG     ✓ Compiled in 172ms
-[02:17:31.273] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:22:03.578] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.266] Server  LOG     ✓ Ready in 1023ms
+[00:00:09.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.505] Browser ERROR   uncaughtError: Error: Objects are not valid as a React child (found: object with keys {message}). If you meant to render a collection of children, use an array instead.
+[00:10:46.495] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:46.587] Server  LOG     ✓ Compiled in 501ms
+[00:10:46.740] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:06.847] Server  LOG     ✓ Compiled in 13ms
+[00:13:10.661] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:40.800] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:11.748] Server  LOG     ✓ Compiled in 130ms
+[00:43:46.913] Server  LOG     ✓ Compiled in 37ms
+[01:01:30.702] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:45.023] Server  LOG     ✓ Compiled in 39ms
+[01:01:50.180] Server  LOG     ✓ Compiled in 95ms
+[01:02:22.207] Server  LOG     ✓ Compiled in 16ms
+[01:02:24.323] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:00.747] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

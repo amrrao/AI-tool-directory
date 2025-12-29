@@ -29,6 +29,7 @@ export default function FetchByProductID(){
     }
     return (
         <div className="w-100 mx-auto">
+            <p>Fetch Tool by Product ID</p>
             <input type="text" placeholder="Enter Tool ID" value={toolid} onChange={(e)=> settoolid(e.target.value)} className="border-1 mr-2 rounded-md p-1"/>
             <button onClick={fetchthetool} className="border-2 p-2 rounded-md">
                 Search by tool ID
