@@ -7,18 +7,18 @@ type Tool = {
     category: string;
 }
 
-export default function FetchByProductID(){
+export default function Deletebyproductid(){
     const[toolid, settoolid] = useState("");
     const [result, setresult] = useState<Tool | null>(null);
     const [error, seterror] = useState("");
 
-    async function fetchthetool(){
+    async function deletethetool(){
         seterror("");
         setresult(null);
         try{
-            const res = await fetch(`http://127.0.0.1:8000/fetchbyproductid/${toolid}`);
+            const res = await fetch(`http://127.0.0.1:8000/deletebyproductid/${toolid}`);
             if (!res.ok){
-                throw new Error("Failed to fetch the tool");
+                throw new Error("Failed to delete the tool");
             }
             const data: Tool = await res.json();
             setresult(data);
@@ -29,10 +29,10 @@ export default function FetchByProductID(){
     }
     return (
         <div className="w-100 mx-auto">
-            <p>Fetch Tool by Product ID</p>
+            <p>Delete Tool by Product ID</p>
             <input type="text" placeholder="Enter Tool ID" value={toolid} onChange={(e)=> settoolid(e.target.value)} className="border-1 mr-2 rounded-md p-1"/>
-            <button onClick={fetchthetool} className="border-2 p-2 rounded-md">
-                Search by tool ID
+            <button onClick={deletethetool} className="border-2 p-2 rounded-md">
+                Delete
             </button>
             {error && 
                 <p>
@@ -41,6 +41,7 @@ export default function FetchByProductID(){
                 }
             {result && (
                 <div className="text-left mt-4">
+                <p>deleted:</p>
                 <p>{result.name}</p>
                 <p>${result.price}</p>
                 <p>{result.category}</p>

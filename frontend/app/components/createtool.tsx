@@ -39,7 +39,8 @@ export default function CreateTool(){
                 throw new Error("Failed to create the tool");
             }
             const data = await res.json();
-            setresult(data.message)
+            setresult(`Created tool: ${data.name}`);
+
 
         } catch(err:any){
             seterror(err.message);

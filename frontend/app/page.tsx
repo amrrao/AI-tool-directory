@@ -6,10 +6,11 @@ import FetchByProductId from "./components/fetchbyproductid";
 import FetchByCategory from "./components/fetchbycategory";
 import CreateTool from "./components/createtool";
 import UpdateTool from "./components/updatetool";
+import Deletebyproductid from "./components/deletebyid";
 
 export default function Home() {
   return (
-    <div className="bg-white text-black h-screen text-center p-8">
+    <div className="bg-white text-black text-center p-8">
       <h1 className="text-2xl">
         The Best AI Tool Directory for Content Creators
       </h1>
@@ -27,6 +28,9 @@ export default function Home() {
       </div>
       <div className="mt-8">
         <UpdateTool />
+      </div>
+      <div className="mt-8">
+        <Deletebyproductid />
       </div>
     </div>
   );

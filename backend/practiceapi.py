@@ -1,6 +1,16 @@
 from fastapi import FastAPI, Path
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+load_dotenv()
+
+
+import os
+from supabase import create_client, Client
+
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
+supabase: Client = create_client(url, key)
 
 app = FastAPI()
 
@@ -30,41 +40,68 @@ class UpdateTool(BaseModel):
 
 @app.get("/")
 def read_root():
-    return AITools.values()
+    response = (
+        supabase.table("planets")
+        .select("*")
+        .execute()
+        )
+    return response.data
 
 @app.get("/fetchbyproductid/{product_id}")
 def read_tool(product_id: int = Path(..., gt=0)):
-    return AITools[product_id]
+    response = (
+        supabase.table("tools")
+        .select("*")
+        .eq("id", product_id)
+        .execute()
+    )
+    return response.data[0]
 
 @app.get("/fetchbycategory/")
 def get_tool(category: str | None=None):
-    returning = []
-    for student in AITools.values():
-        if student["category"]==category:
-            returning.append(student)
-    return returning
+    response = (
+        supabase.table("tools")
+        .select("*")
+        .eq("category", category)
+        .execute()
+    )
+    return response.data
 
 
 @app.post("/tools")
 def create_tool(tool: Tool):
-    product_id = max(AITools.keys()) + 1
-    AITools[product_id] = tool.dict()
-    return {"message": "tool created successfully"}
+    response = (
+        supabase.table("tools")
+        .insert({"name": tool.name, "price": tool.price, "category": tool.category})
+        .execute()
+    )
+    return response.data[0]
 
 @app.put("/tools/{product_id}")
 def update_student(product_id: int, tool: UpdateTool):
-    if product_id not in AITools:
-        return {"error": "tool does not exist"}
-    if tool.name!=None:
-        AITools[product_id]["name"] = tool.name
-    if tool.price!=None:
-        AITools[product_id]["price"] = tool.price
-    if tool.category!=None:
-        AITools[product_id]["category"] = tool.category
+    update_data = {k: v for k, v in tool.dict().items() if v is not None}
+
+    if not update_data:
+        return {"error": "No fields to update"}
+
+    response = (
+        supabase
+        .table("tools")
+        .update(update_data)
+        .eq("id", product_id)
+        .execute()
+    )
+
     return {"message": "tool updated successfully"}
-
-
     
-
+@app.get("/deletebyproductid/{product_id}")
+def read_tool(product_id: int = Path(..., gt=0)):
+    response = (
+        supabase.table("tools")
+        .delete()
+        .eq("id", product_id)
+        .execute()
+    )
+    return response.data[0]
 
 
