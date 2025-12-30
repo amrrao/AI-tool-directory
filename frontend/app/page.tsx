@@ -12,7 +12,7 @@ import AuthButton from "./components/authbutton";
 export default function Home() {
   return (
     <div className="bg-white text-black text-center p-8">
-      <h1 className="text-2xl">
+      <h1 className="text-2xl text-semibold">
         The Best AI Tool Directory for Content Creators
       </h1>
       <p className="mt-4">
