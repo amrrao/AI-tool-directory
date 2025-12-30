@@ -1,9 +1,11 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: Request) {
+const BACKEND_URL = "http://3.236.152.152";
+
+export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  const res = await fetch("http://3.236.152.152/tools", {
+  const res = await fetch(`${BACKEND_URL}/tools`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
