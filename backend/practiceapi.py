@@ -17,7 +17,9 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="https://ai-tool-directory-rose.vercel.app/",
+    allow_origins=[
+        "https://ai-tool-directory-rose.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
