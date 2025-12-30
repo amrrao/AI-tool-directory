@@ -26,13 +26,13 @@ export default function UpdateTool(){
             if (price) update.price = Number(price);
             if (category) update.category = category;
             
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tools/${product_id}`, {
+            const res = await fetch(`/api/tools/${product_id}`, {
                 method: "PUT",
                 headers: {
-                    "Content-Type": "application/json",
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify(update),
-            });
+              });
             if (!res.ok){
                 throw new Error("Failed to update the tool");
             }

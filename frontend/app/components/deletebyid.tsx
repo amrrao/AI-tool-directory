@@ -16,7 +16,9 @@ export default function Deletebyproductid(){
         seterror("");
         setresult(null);
         try{
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/deletebyproductid/${toolid}`);
+            const res = await fetch(`/api/tools/${toolid}`, {
+                method: "DELETE",
+              });
             if (!res.ok){
                 throw new Error("Failed to delete the tool");
             }

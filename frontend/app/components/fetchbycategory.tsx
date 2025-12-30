@@ -16,7 +16,8 @@ export default function FetchByCategory(){
         seterror("");
         setresult(null);
         try{
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/fetchbycategory?category=${category}`);
+            const res = await fetch(`/api/tools/by-category?category=${category}`);
+
             if (!res.ok){
                 throw new Error("Failed to fetch the tool");
             }

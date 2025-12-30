@@ -16,7 +16,8 @@ export default function FetchByProductID(){
         seterror("");
         setresult(null);
         try{
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/fetchbyproductid/${toolid}`);
+            const res = await fetch(`/api/tools/${toolid}`);
+
             if (!res.ok){
                 throw new Error("Failed to fetch the tool");
             }

@@ -28,13 +28,13 @@ export default function CreateTool(){
             };
             settool(tool)
             
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tools`, {
+            const res = await fetch("/api/tools", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify(tool),
-            });
+              });
             if (!res.ok){
                 throw new Error("Failed to create the tool");
             }
