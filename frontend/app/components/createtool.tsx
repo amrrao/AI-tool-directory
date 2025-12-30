@@ -28,7 +28,7 @@ export default function CreateTool(){
             };
             settool(tool)
             
-            const res = await fetch(`http://127.0.0.1:8000/tools`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tools`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

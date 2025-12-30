@@ -377,10 +377,6 @@
     margin-right: calc(var(--spacing) * 2);
   }
 
-  .h-screen {
-    height: 100vh;
-  }
-
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
