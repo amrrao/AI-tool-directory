@@ -7,12 +7,10 @@ export default function AuthButton() {
   const [user, setUser] = useState<any>(null);
 
   useEffect(() => {
-    // get current user on load
     supabase.auth.getUser().then(({ data }) => {
       setUser(data.user);
     });
 
-    // listen for auth changes
     const { data: listener } = supabase.auth.onAuthStateChange(
       (_event, session) => {
         setUser(session?.user ?? null);
@@ -25,9 +23,7 @@ export default function AuthButton() {
   }, []);
 
   async function signIn() {
-    await supabase.auth.signInWithOAuth({
-      provider: "google", // or github
-    });
+    window.location.href = "/auth/signin";
   }
 
   async function signOut() {
@@ -37,9 +33,9 @@ export default function AuthButton() {
   return (
     <>
       {user ? (
-        <button onClick={signOut}>Sign out</button>
+        <button className="bg-red-500 text-white p-2 rounded-md" onClick={signOut}>Sign out</button>
       ) : (
-        <button onClick={signIn}>Sign in</button>
+        <button className="bg-blue-500 text-white p-2 rounded-md" onClick={signIn}>Sign in</button>
       )}
     </>
   );

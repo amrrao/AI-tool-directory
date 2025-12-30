@@ -1,11 +1,8 @@
-[00:00:00.719] Server  LOG     ✓ Ready in 560ms
-[00:00:01.368] Server  ERROR   ⨯ Error: supabaseUrl is required.
-[00:00:01.481] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:01.597] Browser ERROR   uncaughtError: Error: supabaseUrl is required.
-[00:00:02.896] Server  ERROR   ⨯ Error: supabaseUrl is required.
-[00:00:03.347] Server  ERROR   ⨯ Error: supabaseUrl is required.
-[00:00:03.525] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:03.636] Browser ERROR   uncaughtError: Error: supabaseUrl is required.
-[00:00:17.584] Server  ERROR   ⨯ Error: supabaseUrl is required.
-[00:00:17.665] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:17.780] Browser ERROR   uncaughtError: Error: supabaseUrl is required.
+[00:00:00.675] Server  LOG     ✓ Ready in 516ms
+[00:00:04.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:06.732] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:33.944] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:39.985] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:48.332] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:43.367] Server  LOG     ✓ Compiled in 303ms
+[00:02:54.863] Server  LOG     ✓ Compiled in 15ms

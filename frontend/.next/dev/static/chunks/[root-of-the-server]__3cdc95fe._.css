@@ -101,6 +101,8 @@
 
 @layer theme {
   :root, :host {
+    --color-red-500: #fb2c36;
+    --color-blue-500: #3080ff;
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
@@ -109,6 +111,13 @@
     --radius-md: .375rem;
     --default-font-family: var(--font-geist-sans);
     --default-mono-font-family: var(--font-geist-mono);
+  }
+
+  @supports (color: lab(0% 0 0)) {
+    :root, :host {
+      --color-red-500: lab(55.4814% 75.0732 48.8528);
+      --color-blue-500: lab(54.1736% 13.3369 -74.6839);
+    }
   }
 }
 
@@ -395,6 +404,14 @@
     border-width: 2px;
   }
 
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+
   .bg-white {
     background-color: var(--color-white);
   }
@@ -426,6 +443,10 @@
 
   .text-black {
     color: var(--color-black);
+  }
+
+  .text-white {
+    color: var(--color-white);
   }
 
   .antialiased {

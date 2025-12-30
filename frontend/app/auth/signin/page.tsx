@@ -8,7 +8,8 @@ export default function SignInPage() {
     <Auth
         supabaseClient={supabase}
         appearance={{ theme: ThemeSupa }}
-        providers={["google"]}
+        providers={[]}
+        view="sign_in"
     />
   );
 }
