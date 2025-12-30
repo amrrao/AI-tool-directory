@@ -1,11 +1,14 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
+const BACKEND_URL = "http://3.236.152.152";
+
+// GET /api/tools/:id
 export async function GET(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   const res = await fetch(
-    `http://3.236.152.152/fetchbyproductid/${params.id}`
+    `${BACKEND_URL}/fetchbyproductid/${params.id}`
   );
 
   if (!res.ok) {
@@ -19,12 +22,42 @@ export async function GET(
   return NextResponse.json(data);
 }
 
+// PUT /api/tools/:id
+export async function PUT(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const body = await req.json();
+
+  const res = await fetch(
+    `${BACKEND_URL}/tools/${params.id}`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }
+  );
+
+  if (!res.ok) {
+    return NextResponse.json(
+      { error: "Failed to update tool" },
+      { status: res.status }
+    );
+  }
+
+  const data = await res.json();
+  return NextResponse.json(data);
+}
+
+// DELETE /api/tools/:id
 export async function DELETE(
-  req: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   const res = await fetch(
-    `http://3.236.152.152/deletebyproductid/${params.id}`,
+    `${BACKEND_URL}/deletebyproductid/${params.id}`,
     {
       method: "DELETE",
     }
@@ -40,32 +73,3 @@ export async function DELETE(
   const data = await res.json();
   return NextResponse.json(data);
 }
-
-export async function PUT(
-    req: Request,
-    { params }: { params: { id: string } }
-  ) {
-    const body = await req.json();
-  
-    const res = await fetch(
-      `http://3.236.152.152/tools/${params.id}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      }
-    );
-  
-    if (!res.ok) {
-      return NextResponse.json(
-        { error: "Failed to update tool" },
-        { status: res.status }
-      );
-    }
-  
-    const data = await res.json();
-    return NextResponse.json(data);
-  }
-  
