@@ -1,2 +1,11 @@
-[00:00:00.651] Server  LOG     ✓ Ready in 486ms
-[00:00:01.601] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:00.719] Server  LOG     ✓ Ready in 560ms
+[00:00:01.368] Server  ERROR   ⨯ Error: supabaseUrl is required.
+[00:00:01.481] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.597] Browser ERROR   uncaughtError: Error: supabaseUrl is required.
+[00:00:02.896] Server  ERROR   ⨯ Error: supabaseUrl is required.
+[00:00:03.347] Server  ERROR   ⨯ Error: supabaseUrl is required.
+[00:00:03.525] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.636] Browser ERROR   uncaughtError: Error: supabaseUrl is required.
+[00:00:17.584] Server  ERROR   ⨯ Error: supabaseUrl is required.
+[00:00:17.665] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:17.780] Browser ERROR   uncaughtError: Error: supabaseUrl is required.

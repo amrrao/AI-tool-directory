@@ -7,6 +7,7 @@ import FetchByCategory from "./components/fetchbycategory";
 import CreateTool from "./components/createtool";
 import UpdateTool from "./components/updatetool";
 import Deletebyproductid from "./components/deletebyid";
+import AuthButton from "./components/authbutton";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
       <p className="mt-4">
         Discover the best AI tools to build your brand and go viral
       </p>
+      <div className="mt-4">
+        <AuthButton />
+      </div>
       <div className="mt-8">
         <FetchByProductId />
       </div>
