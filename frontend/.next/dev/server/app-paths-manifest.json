@@ -1,3 +1,6 @@
 {
+  "/api/checkout/route": "app/api/checkout/route.js",
+  "/auth/signin/page": "app/auth/signin/page.js",
+  "/cancel/page": "app/cancel/page.js",
   "/page": "app/page.js"
 }

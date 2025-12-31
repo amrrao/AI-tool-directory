@@ -8,6 +8,7 @@ import CreateTool from "./components/createtool";
 import UpdateTool from "./components/updatetool";
 import Deletebyproductid from "./components/deletebyid";
 import AuthButton from "./components/authbutton";
+import CheckoutButton from "./components/checkout-button";
 
 export default function Home() {
   return (
@@ -20,6 +21,11 @@ export default function Home() {
       </p>
       <div className="mt-4">
         <AuthButton />
+      </div>
+      <div className="mt-8">
+        <CheckoutButton priceId={process.env.NEXT_PUBLIC_STRIPE_PRICE_ID || ""}>
+          Buy Now
+        </CheckoutButton>
       </div>
       <div className="mt-8">
         <FetchByProductId />

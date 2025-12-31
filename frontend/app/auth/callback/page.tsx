@@ -4,21 +4,27 @@ import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
+// Official pattern from: https://supabase.com/docs/guides/auth/auth-helpers/nextjs#handling-callbacks
 export default function AuthCallback() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleAuthCallback = async () => {
+      // Handle OAuth redirects (hash-based tokens)
+      // Official pattern: https://supabase.com/docs/guides/auth/auth-helpers/nextjs#oauth-callbacks
       const hashParams = new URLSearchParams(window.location.hash.substring(1));
       const access_token = hashParams.get("access_token");
       const refresh_token = hashParams.get("refresh_token");
-      const type = hashParams.get("type");
 
+      // Handle email confirmation (query-based tokens)
+      // Official pattern: https://supabase.com/docs/guides/auth/auth-helpers/nextjs#email-confirmation
       const token_hash = searchParams.get("token_hash");
-      const queryType = searchParams.get("type");
+      const type = searchParams.get("type");
 
       try {
+        // OAuth callback: set session from hash tokens
+        // Official pattern: https://supabase.com/docs/reference/javascript/auth-setsession
         if (access_token && refresh_token) {
           const { error } = await supabase.auth.setSession({
             access_token,
@@ -29,9 +35,14 @@ export default function AuthCallback() {
             router.push("/");
             return;
           }
-        } else if (token_hash && queryType) {
+        }
+        
+        // Email confirmation: verify OTP token
+        // Official pattern: https://supabase.com/docs/reference/javascript/auth-verifyotp
+        // Documentation: https://supabase.com/docs/guides/auth/auth-helpers/nextjs#email-confirmation
+        if (token_hash && type) {
           const { error } = await supabase.auth.verifyOtp({
-            type: queryType as any,
+            type: type as 'email' | 'signup' | 'recovery' | 'invite' | 'magiclink' | 'email_change',
             token_hash,
           });
 
@@ -41,6 +52,7 @@ export default function AuthCallback() {
           }
         }
 
+        // If neither callback type worked, redirect to sign-in with error
         router.push("/auth/signin?error=verification_failed");
       } catch (error) {
         console.error("Auth callback error:", error);

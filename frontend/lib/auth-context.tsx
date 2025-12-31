@@ -22,7 +22,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get initial session from localStorage
+    // Official pattern from: https://supabase.com/docs/reference/javascript/auth-getsession
     const getInitialSession = async () => {
       const { data: { session } } = await supabase.auth.getSession();
       setSession(session);
@@ -32,7 +32,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     getInitialSession();
 
-    // Listen for auth changes
+    // Official pattern from: https://supabase.com/docs/reference/javascript/auth-onauthstatechange
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {

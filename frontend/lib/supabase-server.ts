@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
+// Official pattern from: https://supabase.com/docs/guides/auth/server-side/nextjs
 export async function createClient() {
   const cookieStore = await cookies();
 
