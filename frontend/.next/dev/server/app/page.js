@@ -8,7 +8,7 @@ R.c("server/chunks/ssr/bbce2_@swc_helpers_cjs__interop_require_wildcard_cjs_618f
 R.c("server/chunks/ssr/[externals]__e8a2741f._.js")
 R.c("server/chunks/ssr/3d860_everything_webdev_practicingbackend_practicingfullstack_frontend_app_23e111af._.js")
 R.c("server/chunks/ssr/bbce2_next_dist_client_components_builtin_global-error_fceeb515.js")
-R.c("server/chunks/ssr/[root-of-the-server]__10564ce1._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__6e0cde11._.js")
 R.c("server/chunks/ssr/bbce2_next_dist_client_components_9b8d9a93._.js")
 R.c("server/chunks/ssr/bbce2_next_dist_client_components_builtin_forbidden_6ff08b9d.js")
 R.c("server/chunks/ssr/bbce2_next_dist_client_components_builtin_unauthorized_b3eadd41.js")

@@ -1,26 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useAuth } from "@/lib/auth-context";
 import { supabase } from "@/lib/supabaseClient";
 
 export default function AuthButton() {
-  const [user, setUser] = useState<any>(null);
-
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
-      setUser(data.user);
-    });
-
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setUser(session?.user ?? null);
-      }
-    );
-
-    return () => {
-      listener.subscription.unsubscribe();
-    };
-  }, []);
+  const { user, loading } = useAuth();
 
   async function signIn() {
     window.location.href = "/auth/signin";
@@ -30,12 +14,24 @@ export default function AuthButton() {
     await supabase.auth.signOut();
   }
 
+  if (loading) {
+    return (
+      <button className="bg-gray-400 text-white p-2 rounded-md" disabled>
+        Loading...
+      </button>
+    );
+  }
+
   return (
     <>
       {user ? (
-        <button className="bg-red-500 text-white p-2 rounded-md" onClick={signOut}>Sign out</button>
+        <button className="bg-red-500 text-white p-2 rounded-md" onClick={signOut}>
+          Sign out
+        </button>
       ) : (
-        <button className="bg-blue-500 text-white p-2 rounded-md" onClick={signIn}>Sign in</button>
+        <button className="bg-blue-500 text-white p-2 rounded-md" onClick={signIn}>
+          Sign in
+        </button>
       )}
     </>
   );
