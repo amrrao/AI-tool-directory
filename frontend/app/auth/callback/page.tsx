@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabaseClient";
 export const dynamic = 'force-dynamic';
 
 // Official pattern from: https://supabase.com/docs/guides/auth/auth-helpers/nextjs#handling-callbacks
-export default function AuthCallback() {
+function AuthCallbackContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -73,6 +73,22 @@ export default function AuthCallback() {
         <p className="text-sm text-gray-500 mt-2">Please wait...</p>
       </div>
     </div>
+  );
+}
+
+// Wrap in Suspense boundary as required by Next.js 15
+// Official pattern: https://nextjs.org/docs/app/api-reference/functions/use-search-params
+export default function AuthCallback() {
+  return (
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <p>Loading...</p>
+        </div>
+      </div>
+    }>
+      <AuthCallbackContent />
+    </Suspense>
   );
 }
 
