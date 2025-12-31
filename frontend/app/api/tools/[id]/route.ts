@@ -5,10 +5,11 @@ const BACKEND_URL = "http://3.236.152.152";
 // GET /api/tools/:id
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await context.params;
   const res = await fetch(
-    `${BACKEND_URL}/fetchbyproductid/${params.id}`
+    `${BACKEND_URL}/fetchbyproductid/${id}`
   );
 
   if (!res.ok) {
@@ -25,12 +26,13 @@ export async function GET(
 // PUT /api/tools/:id
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await context.params;
   const body = await req.json();
 
   const res = await fetch(
-    `${BACKEND_URL}/tools/${params.id}`,
+    `${BACKEND_URL}/tools/${id}`,
     {
       method: "PUT",
       headers: {
@@ -54,10 +56,11 @@ export async function PUT(
 // DELETE /api/tools/:id
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await context.params;
   const res = await fetch(
-    `${BACKEND_URL}/deletebyproductid/${params.id}`,
+    `${BACKEND_URL}/deletebyproductid/${id}`,
     {
       method: "DELETE",
     }
