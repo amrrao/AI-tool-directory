@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 
+// Prevent prerendering - this page requires browser APIs
+export const dynamic = 'force-dynamic';
+
 // Official pattern from: https://supabase.com/docs/guides/auth/auth-helpers/nextjs#handling-callbacks
 export default function AuthCallback() {
   const router = useRouter();
